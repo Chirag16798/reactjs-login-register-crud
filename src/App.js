@@ -9,6 +9,12 @@ import Register from "./pages/register";
 import NotFound from "./pages/notfound";
 import FileUploadPage from "./pages/fileupload";
 
+import Country from './Pages/OncePages/Country/Country';
+import Currency from './Pages/OncePages/Currency/Currency';
+import Languages from './Pages/OncePages/Languages/Languages';
+import Wasp from './Pages/Wasp/Wasp';
+import Task from './Pages/Task/Task';
+
 class App extends Component {
 
     render() {
@@ -23,6 +29,47 @@ class App extends Component {
                         <Route path='/add' component={AddPage} />
                         <Route path='/edit/' component={EditPage} />
                         <Route path='/fileupload/' component={FileUploadPage} />
+                      <Route
+                      path="/Wasp"
+                      element={
+                        <ProtectedRoute>
+                          <Wasp />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/Task"
+                      element={
+                        <ProtectedRoute>
+                          <Task />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/Country"
+                      element={
+                        <ProtectedRoute>
+                          <Country />
+                        </ProtectedRoute>
+                      }
+                    />
+                    <Route
+                      path="/Currency"
+                      element={
+                        <ProtectedRoute>
+                          <Currency />
+                        </ProtectedRoute>
+                      }
+                    />
+
+                    <Route
+                      path="/Languages"
+                      element={
+                        <ProtectedRoute>
+                          <Languages />
+                        </ProtectedRoute>
+                      }
+                    />   
                         <Route path='*' component={NotFound} />
                     </Switch>
                 </Router>
